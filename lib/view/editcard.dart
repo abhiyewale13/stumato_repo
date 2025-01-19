@@ -230,7 +230,9 @@ class _EditCardState extends State<EditCard> {
                 height: 60,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
                 child: const CustomizeButton(
                   text: "Back",
                   fontFamily: "Helvetica",
