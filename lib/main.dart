@@ -1,4 +1,5 @@
-import 'package:assignment_1/view/payment_screen.dart';
+import 'package:assignment_1/components/navbar.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,6 +12,6 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: PaymentScreen());
+        debugShowCheckedModeBanner: false, home: Navbar());
   }
 }
