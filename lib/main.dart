@@ -2,6 +2,8 @@ import 'package:assignment_1/components/navbar.dart';
 
 import 'package:flutter/material.dart';
 
+
+
 void main() {
   runApp(const MainApp());
 }
