@@ -22,6 +22,7 @@ class _MerchantsState extends State<MerchatScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        
         backgroundColor: Colors.white,
         title: Container(
             alignment: Alignment.center,

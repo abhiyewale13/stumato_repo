@@ -2,6 +2,8 @@ import 'package:assignment_1/components/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../view/derscription_screen.dart';
+
 
 class CustomTabview extends StatefulWidget {
   const CustomTabview({super.key});
@@ -182,72 +184,81 @@ class _CustomListViewState extends State<CustomListView> {
       physics:const AlwaysScrollableScrollPhysics(),
       itemCount: widget.itemlist.length,
       itemBuilder: (context, index) {
-        return Container(
-          padding: const EdgeInsets.all(5),
-          width: MediaQuery.sizeOf(context).width,
-          margin: const EdgeInsets.only(top: 1, bottom: 2),
-          decoration: const BoxDecoration(
-              border: Border(
-                  bottom: BorderSide(color: Color.fromARGB(62, 158, 158, 158)),
-                  top: BorderSide(color: Color.fromARGB(62, 158, 158, 158)))),
-          child: Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(2),
-                height: 53,
-                width: 93,
-
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color.fromARGB(114, 158, 158, 158),
-                      offset: Offset(0, 0),
-                      blurRadius: 15,
+        return GestureDetector(
+           onTap: (){
+                 Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context){
+                    return const DerscriptionScreen();
+                  })
+                 );
+                },
+          child: Container(
+            padding: const EdgeInsets.all(5),
+            width: MediaQuery.sizeOf(context).width,
+            margin: const EdgeInsets.only(top: 1, bottom: 2),
+            decoration: const BoxDecoration(
+                border: Border(
+                    bottom: BorderSide(color: Color.fromARGB(62, 158, 158, 158)),
+                    top: BorderSide(color: Color.fromARGB(62, 158, 158, 158)))),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(2),
+                  height: 53,
+                  width: 93,
+          
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color.fromARGB(114, 158, 158, 158),
+                        offset: Offset(0, 0),
+                        blurRadius: 15,
+                      ),
+                    ],
+                  ),
+                  child: Image.network(
+                    widget.itemlist[index]["image"],
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(
+                      text: widget.itemlist[index]["name"],
+                      fontsize: 14,
+                      fontFamily: "Helvetica",
+                      fontWeight: FontWeight.w600,
                     ),
+                    CustomText(
+                      text: widget.itemlist[index]["description"],
+                      fontsize: 11,
+                      fontFamily: "Associate",
+                      fontWeight: FontWeight.normal,
+                      color: const Color.fromRGBO(127, 127, 127,1),
+                      
+                    )
+                   
                   ],
                 ),
-                child: Image.network(
-                  widget.itemlist[index]["image"],
-                  fit: BoxFit.cover,
+                const Spacer(),
+                CustomText(
+                    text: "${widget.itemlist[index]["discount"]}%", 
+                    fontsize: 18,
+                    fontFamily: "Cerebri",
+                    ),
+                const SizedBox(
+                  width: 5,
                 ),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomText(
-                    text: widget.itemlist[index]["name"],
-                    fontsize: 14,
-                    fontFamily: "Helvetica",
-                    fontWeight: FontWeight.w600,
-                  ),
-                  CustomText(
-                    text: widget.itemlist[index]["description"],
-                    fontsize: 11,
-                    fontFamily: "Associate",
-                    fontWeight: FontWeight.normal,
-                    color: const Color.fromRGBO(127, 127, 127,1),
-                    
-                  )
-                 
-                ],
-              ),
-              const Spacer(),
-              CustomText(
-                  text: "${widget.itemlist[index]["discount"]}%", 
-                  fontsize: 18,
-                  fontFamily: "Cerebri",
-                  ),
-              const SizedBox(
-                width: 5,
-              ),
-              SvgPicture.asset("assets/images/arrow.svg")
-            ],
+                SizedBox(child: SvgPicture.asset("assets/images/arrow.svg"))
+              ],
+            ),
           ),
         );
       },
