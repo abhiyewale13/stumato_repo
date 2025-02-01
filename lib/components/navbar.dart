@@ -6,6 +6,8 @@ import 'package:assignment_1/view/payment_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
+import '../view/splash_screen.dart';
+
 class Navbar extends StatefulWidget {
   const Navbar({super.key});
 
@@ -14,15 +16,9 @@ class Navbar extends StatefulWidget {
 }
 
 class _NavbarState extends State<Navbar> {
-//   List<Widget> listofscrren = [
-// // this is for example
-// // change the sequence as you need
-//     const EditCard(),
-//     const MerchatScreen(),
-//     const PaymentScreen()
-//   ];
+
   List<Widget> _buildScreens() {
-    return [const EditCard(), const MerchatScreen(), const PaymentScreen(),Container(),Container()];
+    return [const EditCard(), const MerchatScreen(), const PaymentScreen(),const SplashScreen(),Container()];
   }
 
   int selectedindex = 0;
@@ -105,28 +101,5 @@ class _NavbarState extends State<Navbar> {
     ];
   }
 
-  // bottomNavigationBar: BottomNavigationBar(
-  //     type: BottomNavigationBarType.fixed,
-
-  //     backgroundColor: Colors.white,
-  //     onTap: (index) {
-  //       setState(() {
-  //         selectedindex = index;
-  //       });
-  //     },
-  //     currentIndex: selectedindex,
-  //     selectedItemColor: Colors.red,
-  //     unselectedItemColor: Colors.black,
-  //     showUnselectedLabels: true,
-  //     items: const [
-  //       BottomNavigationBarItem(icon: Icon(Icons.copy), label: "My Cards"),
-  //       BottomNavigationBarItem(
-  //           icon: Icon(Icons.shopping_cart_outlined), label: "Merchants"),
-  //       BottomNavigationBarItem(
-  //           icon: Icon(Icons.swap_vert_rounded), label: "Transactions"),
-  //       BottomNavigationBarItem(
-  //           icon: Icon(Icons.person_4_outlined), label: "Profile"),
-  //       BottomNavigationBarItem(
-  //           icon: Icon(Icons.help_outline_rounded), label: "Help")
-  //     ]),
+  
 }

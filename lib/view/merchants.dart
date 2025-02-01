@@ -1,4 +1,5 @@
 import 'package:assignment_1/components/custom_searchbar.dart';
+import 'package:flutter/rendering.dart';
 
 import 'package:text_scroll/text_scroll.dart';
 
@@ -74,7 +75,17 @@ class _MerchantsState extends State<MerchatScreen> {
                 ),
               ),
             ),
-            const CustomImageSlider(),
+             CustomImageSlider(
+              aspectRatio: 16/9,
+              autoplay: true,
+              animatedSmoothIndicator: true,
+               listofimages: [
+    Image.network("https://tse4.mm.bing.net/th?id=OIP.KKOsqyq1fZ6fk8hPSFrmzgHaEK&pid=Api&P=0&h=220"),
+    Image.network("https://tse4.mm.bing.net/th?id=OIP.KKOsqyq1fZ6fk8hPSFrmzgHaEK&pid=Api&P=0&h=220"),
+     Image.network("https://tse4.mm.bing.net/th?id=OIP.KKOsqyq1fZ6fk8hPSFrmzgHaEK&pid=Api&P=0&h=220"),
+
+  ]
+            ),
           const  CustomSearchbar(),
          const   SizedBox(
               height: 10,

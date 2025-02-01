@@ -3,46 +3,53 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class CustomImageSlider extends StatefulWidget {
-  const CustomImageSlider({super.key});
+  final List<Widget> listofimages;
+  final bool animatedSmoothIndicator;
+  final bool autoplay;
+  final double aspectRatio;
+  const CustomImageSlider(
+      {super.key,
+      required this.listofimages,
+      required this.animatedSmoothIndicator,
+      required this.autoplay,
+      required this.aspectRatio
+      });
 
   @override
   State<CustomImageSlider> createState() => _CustomImageSliderState();
 }
 
 class _CustomImageSliderState extends State<CustomImageSlider> {
-  List<Widget> listofimages = [
-    Image.network("https://tse4.mm.bing.net/th?id=OIP.KKOsqyq1fZ6fk8hPSFrmzgHaEK&pid=Api&P=0&h=220"),
-    Image.network("https://tse4.mm.bing.net/th?id=OIP.KKOsqyq1fZ6fk8hPSFrmzgHaEK&pid=Api&P=0&h=220"),
-     Image.network("https://tse4.mm.bing.net/th?id=OIP.KKOsqyq1fZ6fk8hPSFrmzgHaEK&pid=Api&P=0&h=220"),
-
-  ];
   int imageindex = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         CarouselSlider(
-            items: listofimages, options: CarouselOptions(
-              autoPlay: true,
-             autoPlayInterval:const Duration(seconds: 2),
-              autoPlayAnimationDuration:const Duration(milliseconds: 800),
+            items: widget.listofimages,
+            options: CarouselOptions(
              
-              enlargeCenterPage: true,
+              aspectRatio: widget.aspectRatio,
+              autoPlay: widget.autoplay,
+              autoPlayInterval:
+                  widget.autoplay ? const Duration(seconds: 2) : Duration.zero,
+              autoPlayAnimationDuration: widget.autoplay
+                  ? const Duration(milliseconds: 800)
+                  : Duration.zero,
+             enlargeCenterPage: true,
               onPageChanged: (index, reason) {
-                
                 setState(() {
-                  imageindex=index;
+                  imageindex = index;
                 });
               },
-              )),
-        AnimatedSmoothIndicator(
-            activeIndex: imageindex,
-             count: listofimages.length,
-             effect: const WormEffect(
-              dotHeight: 7,
-              dotWidth: 7
-             ),
-             )
+            )),
+        widget.animatedSmoothIndicator
+            ? AnimatedSmoothIndicator(
+                activeIndex: imageindex,
+                count: widget.listofimages.length,
+                effect: const WormEffect(dotHeight: 7, dotWidth: 7),
+              )
+            : const SizedBox()
       ],
     );
   }

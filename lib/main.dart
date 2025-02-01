@@ -1,4 +1,5 @@
-import 'package:assignment_1/components/navbar.dart';
+
+import 'package:assignment_1/view/splash_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,6 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: Navbar());
+        debugShowCheckedModeBanner: false, home: SplashScreen());
   }
 }
