@@ -13,15 +13,24 @@ class _ContactBoxState extends State<ContactBox> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       height: 259,
       width: MediaQuery.sizeOf(context).width,
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(20)),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround
-        ,
+        
+        mainAxisAlignment: MainAxisAlignment.spaceAround ,
+
         children: [
-        SvgPicture.asset("assets/images/quote.svg"),
+           
+        Container(
+          alignment: Alignment.center,
+          padding: const EdgeInsets.only(
+            left: 60
+          ),
+          child: SvgPicture.asset("assets/images/quote.svg",fit: BoxFit.cover,)),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -31,7 +40,7 @@ class _ContactBoxState extends State<ContactBox> {
                 },
                 child: Container(
                   height: 56,
-                  width: 160,
+                  width: MediaQuery.sizeOf(context).width*0.42,
                   alignment: Alignment.center,
                   padding: const EdgeInsets.only(
                     left: 10,
@@ -60,7 +69,7 @@ class _ContactBoxState extends State<ContactBox> {
                 },
                 child: Container(
                    height: 56,
-                  width: 160,
+                   width: MediaQuery.sizeOf(context).width*0.42,
                   alignment: Alignment.center,
                     padding: const EdgeInsets.only(
                     left: 10,
@@ -97,7 +106,7 @@ class _ContactBoxState extends State<ContactBox> {
                 },
                 child: Container(
                    height: 56,
-                  width: 160,
+                 width: MediaQuery.sizeOf(context).width*0.42,
                   alignment: Alignment.center,
                     padding: const EdgeInsets.only(
                     left: 10,
@@ -126,7 +135,7 @@ class _ContactBoxState extends State<ContactBox> {
                 },
                 child: Container(
                    height: 56,
-                  width: 160,
+                 width: MediaQuery.sizeOf(context).width*0.42,
                   alignment: Alignment.center,
                     padding: const EdgeInsets.only(
                     left: 10,

@@ -11,7 +11,7 @@ class CustomStepsBox extends StatelessWidget {
     return Container(
       height: 110,
       width: 78,
-      margin: EdgeInsets.all(5),
+      margin:const EdgeInsets.all(5),
       clipBehavior: Clip.antiAlias,
       padding: const EdgeInsets.all(5),
       decoration: const BoxDecoration(

@@ -36,7 +36,7 @@ class _EditCardState extends State<EditCard> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 25.0, right: 25, top: 5),
+          padding: const EdgeInsets.only(left: 25.0, right: 25, top: 5,bottom: 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -233,13 +233,14 @@ class _EditCardState extends State<EditCard> {
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                child: const CustomizeButton(
+                child:  CustomizeButton(
                   text: "Back",
                   fontFamily: "Helvetica",
                   fontSize:12 ,
                   fontWeight: FontWeight.w600,
                   height: 54,
-                  color: Color.fromRGBO(233, 39, 105, 1),
+                  width: MediaQuery.sizeOf(context).width,
+                  color:const Color.fromRGBO(233, 39, 105, 1),
                 ),
               )
             ],

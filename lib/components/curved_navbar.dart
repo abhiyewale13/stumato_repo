@@ -2,6 +2,11 @@ import 'package:assignment_1/view/Card_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
+import '../view/editcard.dart';
+import '../view/merchants.dart';
+import '../view/payment_screen.dart';
+import '../view/signup.dart';
+
 
 
 class CurvedNavbar extends StatefulWidget {
@@ -15,12 +20,14 @@ class _CurvedNavbarState extends State<CurvedNavbar> {
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   List listofcontent=[
-    Container(),
+    
+    const EditCard() ,
+  const PaymentScreen(),
+     const MerchatScreen(),
     const CardScreen(),
-    Container(),
-    Container(),
-    Container(),
-     Container(),
+   const SignupScreen()
+   
+   
 
 
   ];

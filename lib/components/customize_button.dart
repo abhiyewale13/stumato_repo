@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CustomizeButton extends StatelessWidget {
   final String text;
   final double? height;
+  final double? width;
   final Color? color;
   final String? fontFamily;
   final FontWeight? fontWeight;
@@ -12,6 +13,7 @@ class CustomizeButton extends StatelessWidget {
     super.key,
     required this.text,
     this.height,
+    this.width,
     this.color,
     this.fontFamily,
     this.fontWeight,
@@ -22,14 +24,14 @@ class CustomizeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(
-        left: 45,
-        right: 45,
+        left: 20,
+        right: 20,
         top: 12,
         bottom: 12
       ),
       alignment: Alignment.center,
       height: height,
-      width: MediaQuery.of(context).size.width,
+      width:width,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: color),
@@ -41,6 +43,7 @@ class CustomizeButton extends StatelessWidget {
             fontWeight: fontWeight,
             color: Colors.white),
       ),
+      
     );
   }
 }
