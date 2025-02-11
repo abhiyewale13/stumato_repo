@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../widgets/custom_otpbox.dart';
-import '../widgets/custom_text.dart';
-import '../widgets/customize_button.dart';
-import 'editcard.dart';
+import '../../widgets/custom_otpbox.dart';
+import '../../widgets/custom_text.dart';
+import '../../widgets/customize_button.dart';
+import '../editcard/editcard.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});

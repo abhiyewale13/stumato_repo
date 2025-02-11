@@ -4,10 +4,10 @@ import 'package:assignment_1/widgets/image_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../widgets/contact_box.dart';
-import '../widgets/custom_image_box.dart';
-import '../widgets/custom_recentbox.dart';
-import '../widgets/custom_steps_box.dart';
+import '../../widgets/contact_box.dart';
+import '../../widgets/custom_image_box.dart';
+import '../../widgets/custom_recentbox.dart';
+import '../../widgets/custom_steps_box.dart';
 
 class CardScreen extends StatefulWidget {
   const CardScreen({super.key});

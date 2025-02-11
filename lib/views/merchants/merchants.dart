@@ -6,8 +6,8 @@ import 'package:text_scroll/text_scroll.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../widgets/custom_tabview.dart';
-import '../widgets/image_slider.dart';
+import '../../widgets/custom_tabview.dart';
+import '../../widgets/image_slider.dart';
 
 class MerchatScreen extends StatefulWidget {
   const MerchatScreen({super.key});

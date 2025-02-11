@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:assignment_1/widgets/curved_navbar.dart';
-import 'package:assignment_1/views/Card_Screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

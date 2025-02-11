@@ -1,11 +1,11 @@
-import 'package:assignment_1/views/Card_Screen.dart';
+import 'package:assignment_1/views/card/Card_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-import '../views/editcard.dart';
-import '../views/merchants.dart';
-import '../views/payment_screen.dart';
-import '../views/signup.dart';
+import '../views/editcard/editcard.dart';
+import '../views/merchants/merchants.dart';
+import '../views/payment/payment_screen.dart';
+import '../views/signup/signup.dart';
 
 
 

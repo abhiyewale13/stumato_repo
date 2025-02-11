@@ -1,12 +1,12 @@
-import 'package:assignment_1/views/derscription_screen.dart';
-import 'package:assignment_1/views/editcard.dart';
-import 'package:assignment_1/views/merchants.dart';
-import 'package:assignment_1/views/payment_screen.dart';
+import 'package:assignment_1/views/description/derscription_screen.dart';
+import 'package:assignment_1/views/editcard/editcard.dart';
+import 'package:assignment_1/views/merchants/merchants.dart';
+import 'package:assignment_1/views/payment/payment_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
-import '../views/splash_screen.dart';
+import '../views/splash/splash_screen.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({super.key});
