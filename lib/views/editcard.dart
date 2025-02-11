@@ -1,5 +1,5 @@
-import 'package:assignment_1/components/customize_button.dart';
-import 'package:assignment_1/components/gradient_container.dart';
+import 'package:assignment_1/widgets/customize_button.dart';
+import 'package:assignment_1/widgets/gradient_container.dart';
 import 'package:flutter/material.dart';
 
 class EditCard extends StatefulWidget {

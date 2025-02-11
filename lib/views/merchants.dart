@@ -1,4 +1,4 @@
-import 'package:assignment_1/components/custom_searchbar.dart';
+import 'package:assignment_1/widgets/custom_searchbar.dart';
 import 'package:flutter/rendering.dart';
 
 import 'package:text_scroll/text_scroll.dart';
@@ -6,8 +6,8 @@ import 'package:text_scroll/text_scroll.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../components/custom_tabview.dart';
-import '../components/image_slider.dart';
+import '../widgets/custom_tabview.dart';
+import '../widgets/image_slider.dart';
 
 class MerchatScreen extends StatefulWidget {
   const MerchatScreen({super.key});

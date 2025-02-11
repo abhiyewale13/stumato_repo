@@ -1,13 +1,13 @@
-import 'package:assignment_1/components/custom_text.dart';
-import 'package:assignment_1/components/debit_card.dart';
-import 'package:assignment_1/components/image_slider.dart';
+import 'package:assignment_1/widgets/custom_text.dart';
+import 'package:assignment_1/widgets/debit_card.dart';
+import 'package:assignment_1/widgets/image_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../components/contact_box.dart';
-import '../components/custom_image_box.dart';
-import '../components/custom_recentbox.dart';
-import '../components/custom_steps_box.dart';
+import '../widgets/contact_box.dart';
+import '../widgets/custom_image_box.dart';
+import '../widgets/custom_recentbox.dart';
+import '../widgets/custom_steps_box.dart';
 
 class CardScreen extends StatefulWidget {
   const CardScreen({super.key});

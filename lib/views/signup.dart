@@ -1,6 +1,8 @@
-import 'package:assignment_1/components/custom_signup_option.dart';
-import 'package:assignment_1/components/custom_text.dart';
-import 'package:assignment_1/components/customize_button.dart';
+import 'package:assignment_1/widgets/custom_signup_option.dart';
+import 'package:assignment_1/widgets/custom_text.dart';
+import 'package:assignment_1/widgets/customize_button.dart';
+import 'package:assignment_1/services/api_calls.dart';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_any_logo/flutter_logo.dart';
@@ -15,6 +17,9 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   bool value = false;
+
+  TextEditingController nameController= TextEditingController();
+  TextEditingController emailController= TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,8 +54,10 @@ Lets get started''',
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: const Color.fromRGBO(234, 234, 255, 1)),
-                  child: const TextField(
-                    decoration: InputDecoration(
+                  child:  TextField(
+                    controller: nameController,
+                    decoration:const  InputDecoration(
+                      
                         focusedBorder: InputBorder.none,
                         enabledBorder: InputBorder.none,
                         hintText: "Enter Your Name",
@@ -67,8 +74,9 @@ Lets get started''',
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: const Color.fromRGBO(234, 234, 255, 1)),
-                  child: const TextField(
-                    decoration: InputDecoration(
+                  child:  TextField(
+                    controller: emailController,
+                    decoration:const InputDecoration(
                         focusedBorder: InputBorder.none,
                         enabledBorder: InputBorder.none,
                         hintText: "Enter Your Email ID",
@@ -81,6 +89,7 @@ Lets get started''',
                 GestureDetector(
                   onTap: () {
                     // send otp logic
+                    
                   },
                   child: const CustomizeButton(
                     text: "Send OTP",
@@ -136,6 +145,7 @@ Lets get started''',
                     GestureDetector(
                       onTap: (){
                         //  email login
+                       
                       },
                       child: const CustomSignupOption(
                           widget: Icon(

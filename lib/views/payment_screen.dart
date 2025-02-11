@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../components/custom_otpbox.dart';
-import '../components/custom_text.dart';
-import '../components/customize_button.dart';
+import '../widgets/custom_otpbox.dart';
+import '../widgets/custom_text.dart';
+import '../widgets/customize_button.dart';
 import 'editcard.dart';
 
 class PaymentScreen extends StatefulWidget {

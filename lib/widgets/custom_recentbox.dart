@@ -1,5 +1,5 @@
-import 'package:assignment_1/components/custom_text.dart';
-import 'package:assignment_1/components/customize_button.dart';
+import 'package:assignment_1/widgets/custom_text.dart';
+import 'package:assignment_1/widgets/customize_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

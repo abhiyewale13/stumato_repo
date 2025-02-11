@@ -1,8 +1,8 @@
-import 'package:assignment_1/components/custom_text.dart';
+import 'package:assignment_1/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../view/derscription_screen.dart';
+import '../views/derscription_screen.dart';
 
 
 class CustomTabview extends StatefulWidget {
