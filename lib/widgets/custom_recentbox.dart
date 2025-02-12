@@ -1,5 +1,5 @@
 import 'package:assignment_1/widgets/custom_text.dart';
-import 'package:assignment_1/widgets/customize_button.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -55,7 +55,7 @@ class CustomRecentbox extends StatelessWidget {
             child:const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
+                 Text(
                   'Generate',
                   style:TextStyle(
                     color: Colors.white,
