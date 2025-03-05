@@ -1,8 +1,9 @@
-import 'package:assignment_1/widgets/custom_text.dart';
-import 'package:assignment_1/widgets/debit_card.dart';
-import 'package:assignment_1/widgets/image_slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:screen1/widgets/custom_text.dart';
+import 'package:screen1/widgets/debit_card.dart';
+import 'package:screen1/widgets/image_slider.dart';
 
 import '../../widgets/contact_box.dart';
 import '../../widgets/custom_image_box.dart';

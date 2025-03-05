@@ -1,12 +1,14 @@
-import 'package:assignment_1/widgets/custom_signup_option.dart';
-import 'package:assignment_1/widgets/custom_text.dart';
-import 'package:assignment_1/widgets/customize_button.dart';
+
 
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_any_logo/flutter_logo.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:screen1/widgets/custom_signup_option.dart';
+import 'package:screen1/widgets/custom_text.dart';
+import 'package:screen1/widgets/customize_button.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});

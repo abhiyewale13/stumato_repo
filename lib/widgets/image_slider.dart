@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+
 class CustomImageSlider extends StatefulWidget {
   final List<Widget> listofimages;
   final bool animatedSmoothIndicator;

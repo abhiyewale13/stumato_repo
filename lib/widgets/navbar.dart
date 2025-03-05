@@ -1,10 +1,11 @@
-import 'package:assignment_1/views/description/derscription_screen.dart';
-import 'package:assignment_1/views/editcard/editcard.dart';
-import 'package:assignment_1/views/merchants/merchants.dart';
-import 'package:assignment_1/views/payment/payment_screen.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:screen1/views/description/derscription_screen.dart';
+import 'package:screen1/views/editcard/editcard.dart';
+import 'package:screen1/views/merchants/merchants.dart';
+import 'package:screen1/views/payment/payment_screen.dart';
 
 import '../views/splash/splash_screen.dart';
 

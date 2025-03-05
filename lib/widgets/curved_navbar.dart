@@ -1,6 +1,7 @@
-import 'package:assignment_1/views/card/Card_Screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:screen1/views/card/Card_Screen.dart';
 
 import '../views/editcard/editcard.dart';
 import '../views/merchants/merchants.dart';

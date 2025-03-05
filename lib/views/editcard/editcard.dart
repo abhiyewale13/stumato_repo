@@ -1,6 +1,7 @@
-import 'package:assignment_1/widgets/customize_button.dart';
-import 'package:assignment_1/widgets/gradient_container.dart';
+
 import 'package:flutter/material.dart';
+import 'package:screen1/widgets/customize_button.dart';
+import 'package:screen1/widgets/gradient_container.dart';
 
 class EditCard extends StatefulWidget {
   const EditCard({super.key});

@@ -1,8 +1,9 @@
-import 'package:assignment_1/widgets/custom_text.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:screen1/widgets/custom_text.dart';
 
-import '../core/services/api_calls.dart';
+
 import '../views/description/derscription_screen.dart';
 
 

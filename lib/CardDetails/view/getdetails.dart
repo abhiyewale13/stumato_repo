@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:screen1/DemoScreen/view/CardDetailsScreen.dart';
+import 'package:stumato_march/CardDetails/view/cardDetailsScreen.dart';
+
 
 class Firstscreen extends StatelessWidget {
   const Firstscreen({super.key});

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:screen1/DemoScreen/view/FirstScreen.dart';
+import 'package:screen1/CardDetails/view/getdetails.dart';
+
 
 void main() {
   runApp(const MainApp());
@@ -13,7 +14,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Firstscreen()
+      home: Getdetails()
     );
   }
 }

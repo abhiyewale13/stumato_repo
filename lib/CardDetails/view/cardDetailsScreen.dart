@@ -1,5 +1,6 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
+import 'package:stumato_march/widgets/text/custom_rich_text.dart';
 
 class CardDetailsScreen extends StatelessWidget {
   const CardDetailsScreen({super.key});
@@ -31,16 +32,15 @@ class CardDetailsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
-                "LOAN DETAILS",
-                style: TextStyle(fontSize: 12, fontFamily: "Gilroy"),
+              CustomRichText(
+                textStyle: TextStyle(fontSize: 12, fontFamily: "Gilroy"),
+                text: "LOAN DETAILS",
               ),
-
               SizedBox(
-                width: 242,
-                child: Text(
-                  "Refresh your credit score to be able to view your latest loan details ",
-                  style: TextStyle(
+                child: CustomRichText(
+                  text:
+                      "Refresh your credit score to be able to view your latest loan details ",
+                  textStyle: TextStyle(
                     fontSize: 12,
                     fontFamily: "Gilroy",
                     fontWeight: FontWeight.w200,
@@ -49,14 +49,14 @@ class CardDetailsScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Text(
-                    "OUTSTANDING",
-                    style: TextStyle(
+                  CustomRichText(
+                    textStyle: TextStyle(
                       fontSize: 12,
                       fontFamily: "Gilroy",
                       fontWeight: FontWeight.w200,
                       color: Colors.grey.shade700,
                     ),
+                    text: "OUTSTANDING",
                   ),
                   Spacer(),
                   Icon(Icons.remove, size: 15),
@@ -71,15 +71,15 @@ class CardDetailsScreen extends StatelessWidget {
 
               Row(
                 children: [
-                  Text(
-                    "LOAN A/C NUMBER",
-                    style: TextStyle(
+                  CustomRichText(
+                    textStyle: TextStyle(
                       fontSize: 12,
 
                       fontFamily: "Gilroy",
                       fontWeight: FontWeight.w200,
                       color: Colors.grey.shade700,
                     ),
+                    text: "LOAN A/C NUMBER",
                   ),
                   Spacer(),
                   Icon(Icons.remove, size: 15),
@@ -93,14 +93,14 @@ class CardDetailsScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Text(
-                    "ISSUED ON",
-                    style: TextStyle(
+                  CustomRichText(
+                    textStyle: TextStyle(
                       fontSize: 12,
                       fontFamily: "Gilroy",
                       fontWeight: FontWeight.w200,
                       color: Colors.grey.shade700,
                     ),
+                    text: "ISSUED ON",
                   ),
                   Spacer(),
                   Icon(Icons.remove, size: 15),
@@ -108,17 +108,15 @@ class CardDetailsScreen extends StatelessWidget {
               ),
 
               GestureDetector(
-                onTap: (){
-
-                },
+                onTap: () {},
                 child: Container(
                   alignment: Alignment.center,
                   height: 40,
                   width: 155,
                   decoration: BoxDecoration(color: Colors.black),
-                  child: Text(
-                    "get loan details",
-                    style: TextStyle(
+                  child: CustomRichText(
+                    text: "get loan details",
+                    textStyle: TextStyle(
                       fontSize: 13,
                       color: Colors.white,
                       fontFamily: "Gilroy",
