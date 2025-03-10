@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:screen1/widgets/custom_text.dart';
 
 
-import '../views/description/derscription_screen.dart';
+
+import 'custom_text.dart';
 
 
 class CustomTabview extends StatefulWidget {
@@ -190,7 +190,7 @@ class _CustomListViewState extends State<CustomListView> {
            onTap: (){
                  Navigator.of(context).push(
                   MaterialPageRoute(builder: (context){
-                    return const DerscriptionScreen();
+                    return const SizedBox();
                   })
                  );
                 },

@@ -1,0 +1,445 @@
+import 'package:flutter/material.dart';
+import 'package:stumatoxpay_march/widgets/custom_text.dart';
+
+class RequestStatementScreen extends StatefulWidget {
+  const RequestStatementScreen({super.key});
+  @override
+  State createState() => _RequestStatementScreenState();
+}
+
+class _RequestStatementScreenState extends State<RequestStatementScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: true,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(55, 116, 205, 1),
+        title: CustomText(
+          text: "Request Statement",
+          fontsize: 20,
+          fontFamily: "MuliBold",
+          color: Colors.white,
+        ),
+        centerTitle: true,
+        leading: IconButton(icon: Icon(Icons.arrow_back_ios_new_sharp,color: Colors.white,), onPressed: () {}),
+      ),
+      body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0,
+              right: 15,
+              top: 15,
+              bottom: 15),
+              child: CustomText(
+                text: "Choose Statement Period",
+                fontsize: 18,
+                fontFamily: "MuliBold",
+                color: Colors.black,
+              ),
+            ),
+            TabBar(
+              indicatorColor: Color.fromRGBO(55, 116, 205, 1),
+              indicatorSize: TabBarIndicatorSize.tab,
+              
+              controller: _tabController,
+              tabs: [Tab(text: 'Monthly'), Tab(text: 'Yearly')],
+            ),
+            Expanded(
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  StatementForm(),
+                  Center(child: Text('Yearly Statement Coming Soon')),
+                ],
+              ),
+            ),
+          ],
+        ),
+    );
+  }
+}
+
+class StatementForm extends StatefulWidget {
+  const StatementForm({super.key});
+
+  @override
+  State<StatementForm> createState() => _StatementFormState();
+}
+
+class _StatementFormState extends State<StatementForm> {
+  TextEditingController fromDateController = TextEditingController();
+  TextEditingController toDateController = TextEditingController();
+  Future<void> _selectDate(
+    BuildContext context,
+    TextEditingController controller,
+  ) async {
+    DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2100),
+    );
+
+    if (pickedDate != null) {
+      setState(() {
+        controller.text =
+            "${pickedDate.day}-${pickedDate.month}-${pickedDate.year}";
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(16.0),
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.only(left: 15, right: 15, top: 25, bottom: 25),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(color: Color.fromRGBO(0, 0, 0, 0.16), blurRadius: 6),
+              ],
+            ),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: DropdownButtonFormField(
+                        decoration: InputDecoration(
+                          labelText: 'Select Year',
+                          labelStyle: TextStyle(color: Colors.black),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              10,
+                            ), // Rounded border
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 1.5,
+                            ), // Border color
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 2,
+                            ), // Normal border
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 2,
+                            ), // Border when focused
+                          ),
+                        ),
+    
+                        items:
+                            ['2025', '2024'].map((String value) {
+                              return DropdownMenuItem(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                        onChanged: (value) {},
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: DropdownButtonFormField(
+                        decoration: InputDecoration(
+                          labelText: 'Select Month',
+                          labelStyle: TextStyle(color: Colors.black),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              10,
+                            ), // Rounded border
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 1.5,
+                            ), // Border color
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 2,
+                            ), // Normal border
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 2,
+                            ), // Border when focused
+                          ),
+                        ),
+                        items:
+                            ['Jan', 'Feb', 'Mar'].map((String value) {
+                              return DropdownMenuItem(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                        onChanged: (value) {},
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 25),
+    
+                Row(
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.sizeOf(context).width * 0.4,
+                      height: 50,
+    
+                      child: TextFormField(
+                        controller: toDateController,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.calendar_month),
+                          labelText: 'To Date',
+                          labelStyle: TextStyle(color: Colors.black),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              10,
+                            ), // Rounded border
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 1.5,
+                            ), // Border color
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 2,
+                            ), // Normal border
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 2,
+                            ), // Border when focused
+                          ),
+                        ),
+                        readOnly: true,
+                        onTap: () {
+                          _selectDate(context, toDateController);
+                        },
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    SizedBox(
+                      width: MediaQuery.sizeOf(context).width * 0.4,
+                      height: 50,
+    
+                      child: TextField(
+                        controller: fromDateController,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.calendar_month),
+                          labelText: 'From Date',
+                          labelStyle: TextStyle(color: Colors.black),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              10,
+                            ), // Rounded border
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 1.5,
+                            ), // Border color
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 2,
+                            ), // Normal border
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(
+                              color: Color.fromRGBO(112, 112, 112, 1),
+                              width: 2,
+                            ), // Border when focused
+                          ),
+                        ),
+    
+                        onTap: () {
+                          setState(() {
+                            _selectDate(context, fromDateController);
+                          });
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+    
+                SizedBox(height: 25),
+                TextFormField(
+                 
+                  decoration: InputDecoration(
+                    labelText: 'Registered Email',
+                    labelStyle: TextStyle(color: Colors.black),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10), // Rounded border
+                      borderSide: BorderSide(
+                        color: Color.fromRGBO(112, 112, 112, 1),
+                        width: 1.5,
+                      ), // Border color
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Color.fromRGBO(112, 112, 112, 1),
+                        width: 2,
+                      ), // Normal border
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Color.fromRGBO(112, 112, 112, 1),
+                        width: 2,
+                      ), // Border when focused
+                    ),
+                  ),
+    
+                  initialValue: 'PRI*****@GMAIL.COM',
+                ),
+              ],
+            ),
+          ),
+          Spacer(),
+    
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  
+                 // view statement navigation
+                },
+                child: Container(
+                   
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color.fromRGBO(55, 116, 205, 1),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromRGBO(0, 0, 0, 0.16),
+                        blurRadius: 6,
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      CustomText(
+                        text: "View",
+                        fontsize: 14,
+                        fontFamily: "MuliBold",
+                        color: Colors.white,
+                      ),
+                      CustomText(
+                        text: "Statement",
+                        fontsize: 14,
+                        fontFamily: "MuliBold",
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  
+                 // EMail statement navigation
+                },
+                child: Container(
+                 
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color.fromRGBO(55, 116, 205, 1),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromRGBO(0, 0, 0, 0.16),
+                        blurRadius: 6,
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      CustomText(
+                        text: "Email",
+                        fontsize: 14,
+                        fontFamily: "MuliBold",
+                        color: Colors.white,
+                      ),
+                      CustomText(
+                        text: "Statement",
+                        fontsize: 14,
+                        fontFamily: "MuliBold",
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  
+                 // Download statement navigation
+                },
+                child: Container(
+                  
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color.fromRGBO(55, 116, 205, 1),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromRGBO(0, 0, 0, 0.16),
+                        blurRadius: 6,
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      CustomText(
+                        text: "Download",
+                        fontsize: 14,
+                        fontFamily: "MuliBold",
+                        color: Colors.white,
+                      ),
+                      CustomText(
+                        text: "Statement",
+                        fontsize: 14,
+                        fontFamily: "MuliBold",
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}

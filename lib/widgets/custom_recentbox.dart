@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:screen1/widgets/custom_text.dart';
+
+import 'custom_text.dart';
 
 class CustomRecentbox extends StatelessWidget {
   final String imagepath;

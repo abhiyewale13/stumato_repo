@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:screen1/widgets/custom_text.dart';
+
+import 'custom_text.dart';
 
 
 class CustomImageBox extends StatelessWidget {
